@@ -1706,9 +1706,9 @@ else
           cc_fail=yes
           ;;
         *)
-          _cc_major=$(echo $cc_version | cut -d '.' -f 1)
-          _cc_minor=$(echo $cc_version | cut -d '.' -f 2)
-          _cc_mini=$(echo $cc_version | cut -d '.' -f 3)
+          _cc_major=$(echo $cc_version | cut -d '.' -f 1 | cut -d '-' -f 1 )
+          _cc_minor=$(echo $cc_version | cut -d '.' -f 2 | cut -d '-' -f 1)
+          _cc_mini=$(echo $cc_version | cut -d '.' -f 3 | cut -d '-' -f 1)
           ;;
       esac
       echores "$cc_version"
